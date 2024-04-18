@@ -1,0 +1,20 @@
+<div *ngIf="!taskID">
+    <h4 class="alert alert-danger">There Is No Task ID</h4>
+</div>
+
+
+<!-- <div *ngIf="(taskID < 0 || taskID >= tasksService.tasks.length)">
+    <h4 class="alert alert-danger">There Is No Task ID</h4>
+</div> -->
+
+
+<div *ngIf="taskID">
+    <h3 class="text-center">{{task.title}}</h3>
+    <div class="container">
+        <input type="text" class="form-control margin" placeholder="Task Title" [(ngModel)]="task.title">
+        <textarea class="form-control margin" placeholder="Task Description" [(ngModel)]="task.description"></textarea>
+        <input type="date" class="form-control margin" [(ngModel)]="task.dueDate">
+        <button class="btn btn-success form-control margin" (click)="updateTask()"> Update </button>
+        <a href="" class="btn btn-default margin form-control">Cancel</a>
+    </div>
+</div>

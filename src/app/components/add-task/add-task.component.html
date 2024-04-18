@@ -1,0 +1,11 @@
+<div class="container">
+    <h2 class="text-center"> Add New Task </h2>
+
+    <input #taskTitle type="text" class="form-control margin" placeholder="Enter The Task Title Here...">
+    <textarea #taskDescription class="form-control margin" placeholder="Enter The Task Decription Here..."></textarea>
+    <input #taskDate type="date" class="form-control margin">
+
+    <button class="btn btn-success margin form-control" (click)="saveTask(taskTitle,taskDescription,taskDate)"> Save
+    </button>
+    <a href="" class="btn btn-default margin form-control ">Cancel</a>
+</div>

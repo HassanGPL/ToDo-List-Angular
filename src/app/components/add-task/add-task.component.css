@@ -1,0 +1,12 @@
+.margin {
+    margin: 10px;
+}
+
+a:hover {
+    background-color: rgb(152, 37, 37);
+    color: white;
+}
+
+.btn-danger {
+    background-color: rgb(152, 37, 37);
+}

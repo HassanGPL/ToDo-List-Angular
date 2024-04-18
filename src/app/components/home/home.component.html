@@ -1,0 +1,42 @@
+<div class="container">
+
+    <blockquote class="blockquote text-center">
+        <p>
+            List Of Tasks
+        </p>
+        <footer class="blockquote-footer">
+            Don't delay today's work until tomorrow
+        </footer>
+    </blockquote>
+
+    <div *ngIf="tasksService.tasks.length == 0">
+        <p class="alert alert-danger">
+            No Tasks For You ...
+        </p>
+    </div>
+
+    <div *ngIf="tasksService.tasks.length !== 0">
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let task of tasksService.tasks; index as i">
+                <span [style.textDecoration]="task.done ? 'line-through' : 'none'" class="sp">{{task.title}}</span>
+                <button class="btn btn-danger mybtn" (click)="deleteTask(i)">Delete</button>
+                <a [href]="['/task/' + i]" class="btn btn-default mybtn">Edit</a>
+                <input type="checkbox" class="checkmerege" (change)="taskDone(i)" [checked]="task.done">
+            </li>
+        </ul>
+    </div>
+
+    <div>
+        <a href="add-task" class="btn btn-primary form-control add-task-btn">Add Task</a>
+    </div>
+
+    <div class="autherbox fade-in-box">
+        <p>
+            Created By: Hassan Ahmed
+        </p>
+        <p>
+            &copy; Copyright: All Rights Reserved 2024
+        </p>
+    </div>
+
+</div>
